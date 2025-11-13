@@ -1,5 +1,7 @@
 from django.db import models
-from .models import Produto
+from django.db import models
+from django.db import models
+from django.db import models
 
 # Create your models here.
 class Funcionarios(models.Model):
@@ -37,6 +39,13 @@ class MensagemContato(models.Model):
         verbose_name_plural = "Mensagens de Contato"
         ordering = ['-data_envio']
 
+
+class Categoria(models.Model):
+    nome = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.nome
+    
 class Produto(models.Model):
     nome = models.CharField(max_length=200)
     categoria = models.CharField(max_length=100)
@@ -50,3 +59,26 @@ class Produto(models.Model):
     class Meta:
         verbose_name = "Produto"
         verbose_name_plural = "Produtos"
+
+
+class Cliente(models.Model):
+    nome_completo = models.CharField(max_length=200)
+    idade = models.PositiveIntegerField()
+    email = models.EmailField()
+    contato = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.nome_completo
+    
+
+class Contato(models.Model):
+    nome = models.CharField(max_length=200)
+    email = models.EmailField()
+    celular = models.CharField(max_length=50)
+    assunto = models.CharField(max_length=200)
+    descricao = models.TextField()
+
+    def __str__(self):
+        return f'{self.assunto} - {self.nome}'
+
+

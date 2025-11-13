@@ -26,3 +26,4 @@ class ContatoModelForm(forms.ModelForm):
             'nome': 'Nome Completo',
             'email': 'Seu E-mail',
         }
+
