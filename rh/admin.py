@@ -1,6 +1,8 @@
 from django.contrib import admin
 from .models import Funcionarios, MensagemContato
 
+from .models import Produto
+
 @admin.register(Funcionarios)
 class FuncionariosAdmin(admin.ModelAdmin):
     # Quais colunas mostrar na lista de produtos
@@ -18,3 +20,9 @@ class MensagemContatoAdmin(admin.ModelAdmin):
     list_filter = ('lido', 'data_envio')
     search_fields = ('nome', 'email', 'assunto')
     
+
+@admin.register(Produto)
+class ProdutoAdmin(admin.ModelAdmin):
+    list_display = ('nome', 'categoria', 'valor')
+    search_fields = ('nome', 'categoria')
+    list_filter = ('categoria',)

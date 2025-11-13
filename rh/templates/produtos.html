@@ -1,7 +1,37 @@
 {% extends "base.html" %}
-{% block title %}Produtos {% endblock %}
+{% load static %}
+
+{% block title %}Produtos{% endblock %}
 
 {% block content %}
-    <h3>Página de Produtos</h3>
+  <h3>Página de Produtos</h3>
 
+  <div class="container-flex">
+    <div class="produto">
+      <h6>Ração Premium para Cachorro</h6>
+      <img src="{% static 'images/racao.jpg' %}" alt="Ração" width="200" height="250">
+    </div>
+
+    <div>
+      <h6>Sachê para Cachorro</h6>
+      <img src="{% static 'images/sache.jpg' %}" alt="Sachê para Cachorro" width="200" height="250">
+    </div>
+
+    <div>
+      <h6>Sachê para Gato</h6>
+      <img src="{% static 'images/sache_gato.jpg' %}" alt="Sachê para Gato" width="200" height="250">
+    </div>
+    <div>
+      <h6>Remedio de Sarna Para Cachorros e Gatos</h6>
+      <img src="{% static 'images/remedio1.jpg' %}" alt="Remedio de Sarna para Gatos e Cachorros" width="200" height="250">
+    </div>
+    <div>
+      <h6>Ração Golden para Gato</h6>
+      <img src="{% static 'images/racao_para_gato.jpg' %}" alt="Ração para Gatos" width="200" height="250">
+    </div>
+    <div>
+      <h6>Remedio de Pulga para Gatos</h6>
+      <img src="{% static 'images/remedio_para_pulga_gatos.jpg' %}" alt="Remedio de pulgas para Gatos" width="200" height="250">
+    </div>
+  </div>
 {% endblock %}
